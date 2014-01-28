@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Ubuntu' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <script src="d3.min.js"></script>
+  <title>Building Blocks</title>
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+    <h1>Building Blocks</h1>
+    <ul>
+      <li>
+        <a href="#example">for example</a>
+      </li>
+      <li>
+        <a href="#wrong">something wrong</a>
+      </li>
+      <li>
+        <a href="#cool">something cool</a>
+      </li>
+      <li>
+        <a href="#git">git</a>
+      </li>
+    </ul>
+    </div>
+  </div>
+  <div class="container">
+  <div class="content">
+  <div name="about" id="about" class="section">
+    <h2>For Example</h2>
+    <div class="enjalot sidebyside">
+      <div class="left">
+        <ul>
+          <br>
+          <h3>Galleries</h3>
+          <li><a target=_blank href="https://github.com/mbostock/d3/wiki/Gallery">official d3 example gallery</a></li><br>
+          <li><a target=_blank href="http://christopheviau.com/d3list/gallery.html">searchable gallery of 1900+ examples</a></li><br>
+
+          <h3>Why examples?</h3>
+          <li><a target=_blank href="http://bost.ocks.org/mike/example/">Mike Bostock's For Example talk</a></li><br>
+
+          <h3>Tools</h3>
+          <li><a href="http://bl.ocks.org/">bl.ocks.org</a></li><br>
+          <li><a href="http://tributary.io/">tributary.io</a></li><br>
+
+          <h3>Examplers</h3>
+          <li><a target=_blank href="http://bl.ocks.org/mbostock">Mike Bostock's Blocks</a></li><br>
+          <li><a target=_blank href="http://bl.ocks.org/syntagmatic">Kai Chang's Blocks</a></li><br>
+          <li><a target=_blank href="http://bl.ocks.org/saraquigley">Sara Quigley's Blocks</a></li><br>
+          <li><a target=_blank href="http://tributary.io/s/6094415?user=enjalot">My Inlets</a></li><br>
+          <li><a target=_blank href="https://github.com/enjalot/d3mixtapes">My Videos</a></li><br>
+        </ul>
+      </div>
+      <div class="right">
+        <br><br><br><br><br><br><br><br>
+        <img src="img/example.png" height=390px></img>
+      </div>
+    </div>
+  </div>
+
+  <div name="wrong" id="wrong" class="section">
+    <h2>something wrong</h2>
+    <div class="sidebyside">
+      <p>so something's wrong with your code? share it!</p>
+      <p>for example, a <a href="wrong/index.html">map that doesn't show up</a></p>
+      <a style="font-size:10px" href="https://gist.github.com/mbostock/7061976">original</a>
+    </div>
+  </div>
+
+  <div name="cool" id="cool" class="section">
+    <h2>something cool</h2>
+    <div class="sidebyside">
+      <p>so you made something cool? share it!</p>
+      <p>for example, an <a href="example.html">electron</a></p>
+      <a style="font-size:10px" href="http://bl.ocks.org/enjalot/8664421">result</a>
+    </div>
+  </div>
+  <div name="git" id="git" class="section">
+    <h2>git</h2>
+    <div class="sidebyside">
+      want to add a screenshot? clone the gist as a repo and add <b>thumbnail.png</b>:
+      <p class="code">git clone git@gist.github.com:XXXXXX.git mygist</p>
+
+      this can also be a convenient way to iterate on an example using your favorite text editor.
+    </div>
+  </div>
+
+
+  <br><br>
+  <a href="#">Top</a>
+  <br>
+  <br>
+  </div>
+</div>
+  
+<script>
+  d3.selectAll("a").attr("target", "_blank")
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-39326674-8', 'enjalot.github.io');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
