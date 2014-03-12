@@ -1,0 +1,183 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+</style>
+<script src="d3.min.js"></script>
+<script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    var color = d3.scale.category20();
+    var color2 = d3.scale.ordinal()
+      .range([
+        "#ECE765",
+        "#48B8C2",
+        "#CF915F"
+      ])    
+  if (!s) return;
+    function go(n) {
+      //fill in the tech tags
+      var div = d3.select(s[n])
+      div.selectAll("tech").each(function(d,i) {
+        d3.select(this)
+        .style("color", color(this.dataset.name))
+        .style("float", "right")
+        .style("padding", "20px")
+        .text(this.dataset.name)
+      })
+      div.selectAll("part").each(function(d,i) {
+        d3.select(this)
+        .style("color", color2(this.dataset.name))
+        .text(this.dataset.name)
+      })
+
+      div.selectAll("a").attr("target", "_blank");
+
+      //do the BIG stuff
+      cur = n;
+      var i = 1e3, e = s[n];
+      for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+      e.style.display = 'inline';
+      e.style.fontSize = i + 'px';
+      if (e.firstChild.nodeName === 'IMG') {
+          document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+          e.firstChild.style.display = 'none';
+      } else {
+          document.body.style.backgroundImage = '';
+          document.body.style.backgroundColor = e.style.backgroundColor;
+      }
+      while (
+          e.offsetWidth > window.innerWidth ||
+          e.offsetHeight > window.innerHeight) {
+          e.style.fontSize = (i -= 10) + 'px';
+          if (i < 0) break;
+      }
+      e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+      if (window.location.hash !== n) window.location.hash = n;
+      document.title = e.textContent || e.innerText; 
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+
+<div>
+  <p>Data</p>
+  <img src="imgs/bloodrune.jpg">
+  <p>Alchemy</p>
+</div>
+
+<div>
+  i am
+  <a href="http://twitter.com/enjalot">@enjalot</a><br>
+  i grew up <a href="http://newhive.com/enjalot/data-journey">like this</a><br>
+  i use <a href="http://enja.org/d3">d3.js</a><br>
+  i hack <a href="http://tributary.io/inlet/6094415?user=enjalot">tributary</a>
+  i make <a href="https://github.com/enjalot/d3mixtapes">mixtapes</a><br>
+  i hold <a href="http://enjalot.github.io/intro-d3/">workshops</a><br>
+  i help run <a href="http://www.meetup.com/Bay-Area-d3-User-Group/">a meetup</a>
+</div>
+
+<div>
+  enough about me
+</div>
+
+<div>
+  Explore <p>vs.</p> Explain
+</div>
+
+<div>
+  Explore:<br>
+  <a href="http://tributary.io/inlet/7480189">surveys</a><br><br>
+  <p><a href="http://tributary.io/inlet/4126957">sensors</a> from <a href="http://www.kijanigrows.com/">gardens</a></p>
+</div>
+<div>
+  Explain:<br>
+  <a href="http://enjalot.github.io/bart/">BART Strike</a>
+</div>
+
+<div>
+  Prototype <a href="http://vimeo.com/36579366">on principle</a>
+</div>
+<div>
+  Make your own tools:<br>
+  <a href="http://tributary.io/inlet/8263747">drawing with data</a><br>
+  <a href="http://tributary.io/inlet/4122710/">maps</a> and <a href="http://tributary.io/inlet/6199585">contextualized data</a><br>
+</div>
+
+<div>
+  Lucky you
+</div>
+<div>
+  90% of data visualization is getting the data ready
+</div>
+<div>
+  The web is the lowest common denominator for the human race
+</div>
+<div>
+  Big Data is a meaningless term
+</div>
+<div>
+  Data Alchemy?
+</div>
+<div>
+  Cool shit:
+  <a href="http://bl.ocks.org/mbostock">http://bl.ocks.org/mbostock</a>
+  <a href="https://www.jasondavies.com/">https://www.jasondavies.com/</a>
+</div>
+<div>
+  keep iterating.
+</div>
+
+<div>made with <em><a href="https://github.com/tmcw/big">Big</a></em> (and <em>d3</em>)</div>
