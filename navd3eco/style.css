@@ -1,0 +1,149 @@
+body {
+  font-family: Lato;
+  /*background-color: #030636;*/
+  background-color: #ebebeb;
+  background-color: #fff;
+  color: #222;
+}
+a, a:hover, a:visited {
+  /*color: #444;*/
+  color: #69b9df;
+}
+
+.container {
+  width: 100%;
+  position:absolute;
+}
+.content {
+  padding-top: 160px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.content .section {
+  padding-top: 40px;
+  line-height: 30px;
+  padding-right: 10px;
+}
+.header {
+  display: inline-block;
+  position: fixed;
+  top:0;
+  margin-top:0;
+  padding-bottom: 5px;
+  width: 100%;
+  height: 110px;
+  z-index:1000;
+  background-color: #ebebeb;
+  background-color: #fff;
+}
+.header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.header a{
+  float:left;
+  margin: 2px;
+  margin-left: 10px;
+}
+.header ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  float: left;
+  clear: left;
+}
+.header li {
+  font-family: Ubuntu;
+  font-size: 16px;
+  list-style: none;
+  display: inline;
+  list-style-type: none;
+}
+li {
+  list-style: none;
+  list-style-type: none;
+}
+h1 {
+  font-family: Ubuntu;
+  font-size: 72px;
+  padding: 0;
+  margin:0;
+  float:left;
+}
+h2 {
+  font-family: Ubuntu;
+  font-size: 24px;
+  width: 100%;
+  padding: 8px;
+  background-color: #69b9df;
+  color: #111;
+  border-radius: 4px;
+}
+
+h3 {
+  font-family: Ubuntu;
+}
+.code {
+  font-family: Courier New;
+  background-color: #ebebeb;
+}
+p {
+  font-family: Lato;
+  font-size: 22px;
+
+}
+img {
+  box-shadow: 3px 3px 8px #eee;
+}
+
+aside {
+  font-size: small;
+  position: relative;
+  margin: 10px;
+  padding: 5px;
+  background-color: #fffeee;
+  width: 180px;
+  font-family: Lato;
+}
+
+.sidebyside {
+  display: block;
+}
+.sidebyside .left {
+  padding: 5px;
+  margin-top: 15px;
+}
+.sidebyside .right {
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.sidebyside svg {
+  border: 1px solid #cfcfcf;
+}
+@media only screen and (min-width: 1000px) {
+    .content {
+      padding-top: 60px;
+    }
+    .sidebyside {
+        width: 100%;
+    }
+    .sidebyside .left, .sidebyside .right {
+        vertical-align: top;
+        display: inline-block;
+        width: 45%;
+    }
+    .sidebyside .left {
+        margin-right: 5px;
+    }
+    aside {
+      position: relative;
+      right: 10px;
+      bottom: 0;
+    }
+}
+@media only screen and (max-width: 1000px) {
+  .header {
+    height: 190px;
+  }
+}
