@@ -21,7 +21,7 @@ a, a:hover, a:visited {
 }
 .content .section {
   padding-top: 40px;
-  line-height: 30px;
+  line-height: 2.5em;
   padding-right: 10px;
 }
 .header {
